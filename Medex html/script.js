@@ -42,14 +42,6 @@ form.addEventListener("submit", async (e) => {
 
     const data = await response.json();
 
-    if (data.choices && data.choices.length > 0) {
-      const content = data.choices[0].message.content.trim();
-      mensajes.push({ role: "assistant", content });
-      appendMessage("👨‍⚕️ MedExpress", content);
-    } else {
-      appendMessage("❗Error", "La respuesta del servidor fue vacía.");
-    }
-
 
     if (data.choices && data.choices.length > 0) {
       const content = data.choices[0].message.content.trim();
